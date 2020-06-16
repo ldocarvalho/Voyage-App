@@ -18,13 +18,13 @@ class Task {
     }
     
     // Esta função deve retornar a busca no banco de dados
-    static func fetchTasks() -> [Task] {
-        return [
-            Task(title: "Programar cards", color: .green),
-            Task(title: "Programar alerts", color: .brown),
-            Task(title: "Fazer animações", color: .magenta),
-            Task(title: "Ilustrar", color: .purple),
-            Task(title: "Finalizar apresentação do Chalenge", color: .orange)
-        ]
-    }
+//    static func fetchTasks() -> [Task] {
+//        return [
+//            Task(title: "Programar cards", color: .green),
+//            Task(title: "Programar alerts", color: .brown),
+//            Task(title: "Fazer animações", color: .magenta),
+//            Task(title: "Ilustrar", color: .purple),
+//            Task(title: "Finalizar apresentação do Chalenge", color: .orange)
+//        ]
+//    }
 }

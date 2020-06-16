@@ -12,7 +12,8 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var restartButton: UIButton!
     
-    var tasks = Task.fetchTasks()
+    // var tasks = Task.fetchTasks()
+    var tasks: [Task] = []
     
     let cellScale: CGFloat = 0.6
     
@@ -54,13 +55,20 @@ extension TasksViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tasks.count
+        //return tasks.count
+        if tasks.count == 0 {
+            return tasks.count + 2
+        } else {
+            return tasks.count + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskCollectionViewCell", for: indexPath) as! TaskCollectionViewCell
-        let task = tasks[indexPath.item]
-        cell.task = task
+        if (tasks.count > 0) {
+            let task = tasks[indexPath.item]
+            cell.task = task
+        }
         return cell
     }
 }

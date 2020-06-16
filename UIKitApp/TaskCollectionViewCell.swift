@@ -16,30 +16,41 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     var task: Task! {
         didSet {
+            backgroundColorView.backgroundColor = .white
+            backgroundColorView.layer.cornerRadius = 10.0
+            backgroundColorView.layer.masksToBounds = true
+            
             self.setTextView()
-            self.updateUI()
+            // self.updateUI()
         }
     }
     
     // Used to update cards' UI with the content from the fetch
-    func updateUI() {
-        if let task = task {
-            backgroundColorView.backgroundColor = task.color
-            taskTextView.backgroundColor = task.color
-            taskTextView.text = task.title
-        } else {
-            backgroundColorView.backgroundColor = nil
-            taskTextView.backgroundColor = nil
-            taskTextView.text = nil
-        }
-        backgroundColorView.layer.cornerRadius = 10.0
-        backgroundColorView.layer.masksToBounds = true
-    }
+//    func updateUI() {
+//        if let task = task {
+//            backgroundColorView.backgroundColor = task.color
+//            taskTextView.backgroundColor = task.color
+//            taskTextView.text = task.title
+//        } else {
+//            backgroundColorView.backgroundColor = nil
+//            taskTextView.backgroundColor = nil
+//            taskTextView.text = nil
+//        }
+//        backgroundColorView.layer.cornerRadius = 10.0
+//        backgroundColorView.layer.masksToBounds = true
+//    }
     
     // Called to set the text view layout to when there's nothing written in the cards
     func setTextView() {
-        taskTextView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
+        taskTextView.backgroundColor = .white
+        taskTextView.text = task.title
         taskTextView.textColor = .black
+        
+        if taskTextView.text.isEmpty || taskTextView.text == "" {
+            taskTextView.textColor = .lightGray
+            taskTextView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
+        }
+        
         taskTextView.textAlignment = .center
         taskTextView.autocapitalizationType = .sentences
         taskTextView.isScrollEnabled = false
