@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TasksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -34,7 +35,7 @@ class TasksViewController: UIViewController {
         
         let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: insetY, right: insetX)
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: insetY, right: 0)
         
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
@@ -66,6 +67,15 @@ class TasksViewController: UIViewController {
         }
         collectionView.reloadData()
     }
+    
+    private func indexOfMajorCell() -> Int {
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let itemWidth = layout.itemSize.width
+        let proportionalOffset = layout.collectionView!.contentOffset.x / itemWidth
+        let index = Int(round(proportionalOffset))
+        let safeIndex = max(0, min(tasks.count - 1, index))
+        return safeIndex
+    }
 }
 
 // Collecting data source and adding to the cells in the Collection View
@@ -90,5 +100,15 @@ extension TasksViewController: UICollectionViewDataSource {
             cell.task = task
         }
         return cell
+    }
+}
+
+extension TasksViewController: UIScrollViewDelegate, UICollectionViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        targetContentOffset.pointee = scrollView.contentOffset
+        let indexOfMajorCell = self.indexOfMajorCell()
+        let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+        layout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }
