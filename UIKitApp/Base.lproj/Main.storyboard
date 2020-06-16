@@ -124,6 +124,10 @@
                                                 </view>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundColorView" destination="j3f-lH-ph6" id="YZ3-Js-Jun"/>
+                                            <outlet property="taskTextView" destination="WM1-uU-EEM" id="9ql-lP-IQv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

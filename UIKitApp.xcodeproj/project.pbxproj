@@ -66,6 +66,8 @@
 			children = (
 				762A896924990EA60032ACAC /* AppDelegate.swift */,
 				762A896B24990EA60032ACAC /* SceneDelegate.swift */,
+				762A8982249912ED0032ACAC /* Task.swift */,
+				762A8984249913D30032ACAC /* TaskCollectionViewCell.swift */,
 				762A896D24990EA60032ACAC /* ViewController.swift */,
 				762A896F24990EA60032ACAC /* Main.storyboard */,
 				762A8980249912970032ACAC /* TasksViewController.swift */,
@@ -73,8 +75,6 @@
 				762A897724990EA80032ACAC /* LaunchScreen.storyboard */,
 				762A897A24990EA80032ACAC /* Info.plist */,
 				762A897224990EA60032ACAC /* UIKitApp.xcdatamodeld */,
-				762A8982249912ED0032ACAC /* Task.swift */,
-				762A8984249913D30032ACAC /* TaskCollectionViewCell.swift */,
 			);
 			path = UIKitApp;
 			sourceTree = "<group>";
