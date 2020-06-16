@@ -46,6 +46,17 @@ class TasksViewController: UIViewController {
         
         self.present(alert, animated: true)
     }
+    
+    func reloadTasks() {
+        do {
+            if let listOfSavedTasks = try PersistenceService.persistentContainer.viewContext.fetch(Tasks.fetchRequest()) as? [Task] {
+                self.tasks = listOfSavedTasks
+            }
+        } catch {
+            print("Erro no banco, não conseguiu realizar a busca")
+        }
+        collectionView.reloadData()
+    }
 }
 
 // Collecting data source and adding to the cells in the Collection View

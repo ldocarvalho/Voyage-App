@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
-import UIKit
+import CoreData
 
 class TaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var taskTextView: UITextView!
+    var tvc: TasksViewController!
     
     var task: Task! {
         didSet {
@@ -79,6 +79,12 @@ extension TaskCollectionViewCell: UITextViewDelegate {
         if taskTextView.text.isEmpty || textView.text == "" {
             taskTextView.textColor = .lightGray
             taskTextView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
+        }else {
+            if let task = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: PersistenceService.persistentContainer.viewContext) as? Task {
+                task.title = taskTextView.text
+                PersistenceService.saveContext()
+                tvc.reloadTasks()
+            }
         }
     }
     
