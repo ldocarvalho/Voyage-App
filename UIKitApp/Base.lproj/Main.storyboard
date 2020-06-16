@@ -29,6 +29,9 @@
                                 <rect key="frame" x="184" y="526" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="yGe-3I-Pz8" kind="show" id="vXE-U6-Heh"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira aqui sua meta ou seu sonho" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ugF-xv-RBq">
                                 <rect key="frame" x="20" y="464" width="374" height="34"/>
@@ -68,13 +71,14 @@
         <!--View Controller-->
         <scene sceneID="ZiG-dV-Ivv">
             <objects>
-                <viewController id="yGe-3I-Pz8" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="yGe-3I-Pz8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xUD-8o-nnG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lDK-d9-LWN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bz5-5E-JQx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbg-TU-rzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
