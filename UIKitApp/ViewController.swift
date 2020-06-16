@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var explanationLabel: UILabel!
+    @IBOutlet weak var invitationLabel: UILabel!
+    @IBOutlet weak var goalTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

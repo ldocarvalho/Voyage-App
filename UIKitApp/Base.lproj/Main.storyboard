@@ -54,6 +54,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="explanationLabel" destination="HB2-FL-JcB" id="HqQ-U0-PYP"/>
+                        <outlet property="goalTextField" destination="ugF-xv-RBq" id="3Ev-kH-VFn"/>
+                        <outlet property="greetingLabel" destination="jOb-wX-Csy" id="zn6-ae-U4i"/>
+                        <outlet property="invitationLabel" destination="ZA0-DS-xT9" id="u8t-rl-kv5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
