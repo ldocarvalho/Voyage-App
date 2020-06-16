@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Tasks View Controller-->
         <scene sceneID="ZiG-dV-Ivv">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="yGe-3I-Pz8" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="yGe-3I-Pz8" customClass="TasksViewController" customModule="UIKitApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xUD-8o-nnG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

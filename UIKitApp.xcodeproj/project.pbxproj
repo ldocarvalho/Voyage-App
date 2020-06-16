@@ -14,6 +14,7 @@
 		762A897424990EA60032ACAC /* UIKitApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 762A897224990EA60032ACAC /* UIKitApp.xcdatamodeld */; };
 		762A897624990EA80032ACAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762A897524990EA80032ACAC /* Assets.xcassets */; };
 		762A897924990EA80032ACAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762A897724990EA80032ACAC /* LaunchScreen.storyboard */; };
+		762A8981249912970032ACAC /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762A8980249912970032ACAC /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		762A897524990EA80032ACAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		762A897824990EA80032ACAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		762A897A24990EA80032ACAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		762A8980249912970032ACAC /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				762A896B24990EA60032ACAC /* SceneDelegate.swift */,
 				762A896D24990EA60032ACAC /* ViewController.swift */,
 				762A896F24990EA60032ACAC /* Main.storyboard */,
+				762A8980249912970032ACAC /* TasksViewController.swift */,
 				762A897524990EA80032ACAC /* Assets.xcassets */,
 				762A897724990EA80032ACAC /* LaunchScreen.storyboard */,
 				762A897A24990EA80032ACAC /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				762A897424990EA60032ACAC /* UIKitApp.xcdatamodeld in Sources */,
 				762A896E24990EA60032ACAC /* ViewController.swift in Sources */,
+				762A8981249912970032ACAC /* TasksViewController.swift in Sources */,
 				762A896A24990EA60032ACAC /* AppDelegate.swift in Sources */,
 				762A896C24990EA60032ACAC /* SceneDelegate.swift in Sources */,
 			);
