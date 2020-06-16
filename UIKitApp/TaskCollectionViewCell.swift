@@ -66,8 +66,8 @@ extension TaskCollectionViewCell: UITextViewDelegate {
             taskTextView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
         }
         else {
-            if let task = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: PersistenceService.persistentContainer.viewContext) as? Task {
-                task.title = taskTextView.text
+            if let task = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: PersistenceService.persistentContainer.viewContext) as? Tasks {
+                task.task = taskTextView.text
                 PersistenceService.saveContext()
                 tvc.reloadTasks()
             }

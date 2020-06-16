@@ -152,6 +152,7 @@
                     <navigationItem key="navigationItem" id="bz5-5E-JQx"/>
                     <connections>
                         <outlet property="collectionView" destination="cCV-pF-O8J" id="9Sy-mX-wiw"/>
+                        <outlet property="motivational" destination="OL6-95-SVs" id="BHF-aW-ee6"/>
                         <outlet property="restartButton" destination="KD6-fY-tXC" id="x2y-0S-bZz"/>
                     </connections>
                 </viewController>
