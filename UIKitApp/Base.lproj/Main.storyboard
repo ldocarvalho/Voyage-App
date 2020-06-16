@@ -143,6 +143,10 @@
                         <viewLayoutGuide key="safeArea" id="lDK-d9-LWN"/>
                     </view>
                     <navigationItem key="navigationItem" id="bz5-5E-JQx"/>
+                    <connections>
+                        <outlet property="collectionView" destination="cCV-pF-O8J" id="9Sy-mX-wiw"/>
+                        <outlet property="restartButton" destination="KD6-fY-tXC" id="x2y-0S-bZz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbg-TU-rzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
