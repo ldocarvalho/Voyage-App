@@ -13,7 +13,7 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     
     // var tasks = Task.fetchTasks()
-    var tasks: [Task] = []
+    var tasks: [Task] = [Task(title: "")]
     
     let cellScale: CGFloat = 0.6
     
@@ -47,6 +47,12 @@ class TasksViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    @IBAction func addNewCell(_ sender: Any) {
+        let emptyTask = Task(title: "")
+        tasks.append(emptyTask)
+        collectionView.reloadData()
+    }
+    
     func reloadTasks() {
         do {
             if let listOfSavedTasks = try PersistenceService.persistentContainer.viewContext.fetch(Tasks.fetchRequest()) as? [Task] {
@@ -66,17 +72,17 @@ extension TasksViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return tasks.count
-        if tasks.count == 0 {
-            return tasks.count + 2
-        } else {
-            return tasks.count + 1
-        }
+        return tasks.count
+//        if tasks.count == 0 {
+//            return tasks.count + 2
+//        } else {
+//            return tasks.count + 1
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskCollectionViewCell", for: indexPath) as! TaskCollectionViewCell
-        if (tasks.count > 0) {
+        if (tasks.count != 0) {
             let task = tasks[indexPath.item]
             cell.task = task
         }

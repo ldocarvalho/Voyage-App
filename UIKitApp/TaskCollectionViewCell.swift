@@ -16,7 +16,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     var task: Task! {
         didSet {
-            backgroundColorView.backgroundColor = .white
+            backgroundColorView.backgroundColor = .blue
             backgroundColorView.layer.cornerRadius = 10.0
             backgroundColorView.layer.masksToBounds = true
             
@@ -25,24 +25,9 @@ class TaskCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    // Used to update cards' UI with the content from the fetch
-//    func updateUI() {
-//        if let task = task {
-//            backgroundColorView.backgroundColor = task.color
-//            taskTextView.backgroundColor = task.color
-//            taskTextView.text = task.title
-//        } else {
-//            backgroundColorView.backgroundColor = nil
-//            taskTextView.backgroundColor = nil
-//            taskTextView.text = nil
-//        }
-//        backgroundColorView.layer.cornerRadius = 10.0
-//        backgroundColorView.layer.masksToBounds = true
-//    }
-    
     // Called to set the text view layout to when there's nothing written in the cards
     func setTextView() {
-        taskTextView.backgroundColor = .white
+        taskTextView.backgroundColor = .blue
         taskTextView.text = task.title
         taskTextView.textColor = .black
         
@@ -79,7 +64,8 @@ extension TaskCollectionViewCell: UITextViewDelegate {
         if taskTextView.text.isEmpty || textView.text == "" {
             taskTextView.textColor = .lightGray
             taskTextView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
-        }else {
+        }
+        else {
             if let task = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: PersistenceService.persistentContainer.viewContext) as? Task {
                 task.title = taskTextView.text
                 PersistenceService.saveContext()
