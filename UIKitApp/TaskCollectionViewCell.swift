@@ -12,6 +12,9 @@ import Foundation
 class TaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var taskTextView: UITextView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var notDoneButton: UIButton!
+    
     var tvc: TasksViewController!
     
     var task: Task! {
@@ -40,8 +43,32 @@ class TaskCollectionViewCell: UICollectionViewCell {
         taskTextView.autocapitalizationType = .sentences
         taskTextView.isScrollEnabled = false
         taskTextView.textContainerInset = UIEdgeInsets(top: (taskTextView.frame.height)/4.0, left: 0, bottom: 0, right: 0)
+        
+        self.doneButton.alpha = 0
+        self.notDoneButton.alpha = 0
+
         self.taskTextView.delegate = self
     }
+    
+//    func updateUINotDoneAction(cell: TaskCollectionViewCell) {
+//        self.backgroundColorView.alpha = 0.7
+//        self.taskTextView.alpha = 0.7
+//    }
+    
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        tvc?.addGreatMessage()
+        self.taskTextView.isEditable = false
+        self.doneButton.alpha = 0
+        self.notDoneButton.alpha = 0
+    }
+    
+    @IBAction func notDoneButtonClicked(_ sender: Any) {
+        tvc?.addBadMessage()
+        self.taskTextView.isEditable = false
+        self.doneButton.alpha = 0
+        self.notDoneButton.alpha = 0
+    }
+    
 }
 
 extension TaskCollectionViewCell: UITextViewDelegate {
@@ -53,6 +80,8 @@ extension TaskCollectionViewCell: UITextViewDelegate {
     
     // Called when the text view starts to be edited
     func textViewDidBeginEditing(_ textView: UITextView) {
+        self.doneButton.alpha = 0
+        self.notDoneButton.alpha = 0
         if textView.text == "Escreva aqui uma tarefa importante para chegar na sua meta." {
             textView.text = ""
         }
@@ -64,6 +93,8 @@ extension TaskCollectionViewCell: UITextViewDelegate {
         if textView.text.isEmpty || textView.text == "" {
             textView.textColor = .lightGray
             textView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
+//            self.doneButton.alpha = 0
+//            self.notDoneButton.alpha = 0
         }
         let row = textView.tag
         print(textView.text!)
@@ -72,6 +103,13 @@ extension TaskCollectionViewCell: UITextViewDelegate {
 //            guard let text = textView.text else { return }
 //            print(text)
 //            TasksViewController.store(textViewText: text)
+        self.doneButton.alpha = 1
+        self.notDoneButton.alpha = 1
+        
+        if textView.text == "Escreva aqui uma tarefa importante para chegar na sua meta." {
+            self.doneButton.alpha = 0
+            self.notDoneButton.alpha = 0
+        }
     }
     
     // Identify the text's end

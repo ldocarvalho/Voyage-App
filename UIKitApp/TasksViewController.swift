@@ -35,7 +35,7 @@ class TasksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Adjusting the controls to the text view
+        self.addGreatMessage()
         
         // Layout adjustment
         let screenSize = UIScreen.main.bounds.size
