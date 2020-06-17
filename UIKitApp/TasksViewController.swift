@@ -12,7 +12,7 @@ import Foundation
 class TasksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var restartButton: UIButton!
-    
+    @IBOutlet weak var motivationLabel: UILabel!
     
     static let defaults = UserDefaults.standard
     static let storageKey: String = "procrastination-app"
@@ -23,8 +23,8 @@ class TasksViewController: UIViewController {
     
     var tasks: [Task] = [Task(title: "")]
     
-    let frasesConsolo: [String] = ["Trace novas rotas.", "Não desista, os desvios fazem parte.", "Siga em frente, continue sendo forte.", "Os caminhos das nossas viagens nem sempre saem como esperado, mas continue firme.", "A estrada tem alguns obstaculos, não deixe de acreditar em si.", "Existem infinitas possibilidade de caminhos, mas o destino é um só.", "Você consegue!", "Se você fizer as coisas por completo, você será um vitorioso."]
-    let frasesParabens: [String] = ["Uma grande viagem começa com um pequeno passo.", "Seu sonho está um passo de você.", "Você está indo muito bem.", "Não existe uma direção certa, você está indo muito bem.", "Você faz seu proprio caminho.", "Deixe seus sonhos guiarem você. Continue!", "Mantenha sempre seus sonhos em movimento.", "Não fique parado, seu sonho esta logo ali."]
+    let badMessages: [String] = ["Trace novas rotas.", "Não desista, os desvios fazem parte.", "Siga em frente, continue sendo forte.", "Os caminhos das nossas viagens nem sempre saem como esperado, mas continue firme.", "A estrada tem alguns obstaculos, não deixe de acreditar em si.", "Existem infinitas possibilidade de caminhos, mas o destino é um só.", "Você consegue!", "Se você fizer as coisas por completo, você será um vitorioso."]
+    let greatMessages: [String] = ["Uma grande viagem começa com um pequeno passo.", "Seu sonho está um passo de você.", "Você está indo muito bem.", "Não existe uma direção certa, você está indo muito bem.", "Você faz seu proprio caminho.", "Deixe seus sonhos guiarem você. Continue!", "Mantenha sempre seus sonhos em movimento.", "Não fique parado, seu sonho esta logo ali."]
 
     
     let cellScale: CGFloat = 0.6
@@ -35,15 +35,15 @@ class TasksViewController: UIViewController {
         // Adjusting the controls to the text view
         
         // Layout adjustment
-//        let screenSize = UIScreen.main.bounds.size
-//        let cellWidth = floor(screenSize.width * cellScale)
-//        let cellHeight = floor(screenSize.height * cellScale)
-//        let insetX = (view.bounds.width - cellWidth) / 2.0
-//        let insetY = (view.bounds.height - cellWidth) / 2.0
-//        
-//        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-//        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: insetY, right: 0)
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * cellScale)
+        let cellHeight = floor(screenSize.height * cellScale)
+        let insetX = (view.bounds.width - cellWidth) / 2.0
+        //let insetY = (view.bounds.height - cellHeight) / 2.0
+        
+        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: 0.0, right: 0.0)
         
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
@@ -58,6 +58,19 @@ class TasksViewController: UIViewController {
         
         self.present(alert, animated: true)
     }
+    
+    func addGreatMessage() {
+        let numberOfItems = greatMessages.count - 1
+        let randomIndex = Int.random(in: 0 ..< numberOfItems)
+        motivationLabel.text = greatMessages[randomIndex]
+    }
+    
+    func addBadMessage() {
+        let numberOfItems = badMessages.count - 1
+        let randomIndex = Int.random(in: 0 ..< numberOfItems)
+        motivationLabel.text = badMessages[randomIndex]
+    }
+    
     
     @IBAction func addNewCell(_ sender: Any) {
         let emptyTask = Task(title: "")

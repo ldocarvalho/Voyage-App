@@ -149,8 +149,8 @@
                                 <rect key="frame" x="-4" y="0.0" width="422" height="898"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frase de motivação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-95-SVs">
-                                <rect key="frame" x="132" y="555" width="150" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frase de motivação" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-95-SVs">
+                                <rect key="frame" x="20" y="555" width="374" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -163,6 +163,7 @@
                     <navigationItem key="navigationItem" id="bz5-5E-JQx"/>
                     <connections>
                         <outlet property="collectionView" destination="cCV-pF-O8J" id="9Sy-mX-wiw"/>
+                        <outlet property="motivationLabel" destination="OL6-95-SVs" id="ALB-Ij-BBY"/>
                         <outlet property="motivational" destination="OL6-95-SVs" id="BHF-aW-ee6"/>
                         <outlet property="restartButton" destination="KD6-fY-tXC" id="x2y-0S-bZz"/>
                     </connections>
