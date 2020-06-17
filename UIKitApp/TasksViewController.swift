@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import CoreData
+import Foundation
 
 class TasksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var restartButton: UIButton!
     
     
-    private let defaults = UserDefaults.standard
-    private let storageKey: String = "procrastination-app"
+    static let defaults = UserDefaults.standard
+    static let storageKey: String = "procrastination-app"
 
     
     @IBOutlet weak var motivational: UILabel!
@@ -71,32 +71,29 @@ class TasksViewController: UIViewController {
         return safeIndex
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.index()
-//    }
     
     public func index() {
-        if let tasks = defaults.array(forKey: storageKey) {
+        if let tasks = TasksViewController.defaults.array(forKey: TasksViewController.storageKey) {
             self.tasks = tasks as! [Task]
             self.collectionView.reloadData()
         }
     }
     
-    public func store(textViewText text: String?) {
+    static func store(textViewText text: String?) {
+        print("Naruto")
         if text != nil {
             let task: Task = Task(title: text!)
-    
-            if var tasks = defaults.array(forKey: storageKey) {
-                tasks.append(task)
-                //self.tasks.append(task)
-                defaults.set([task], forKey: storageKey)
-            } else {
-                    defaults.set([task], forKey: storageKey)
+            guard var tasks = defaults.array(forKey: storageKey) else {
+                defaults.set([task.title], forKey: storageKey)
+                return
             }
+            tasks.append(task.title)
+            //self.tasks.append(task)
+            defaults.set(tasks, forKey: storageKey)
         }
     }
 }
+
 
 // Collecting data source and adding to the cells in the Collection View
 extension TasksViewController: UICollectionViewDataSource {

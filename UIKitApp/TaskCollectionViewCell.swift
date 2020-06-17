@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import Foundation
 
 class TaskCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundColorView: UIView!
@@ -64,6 +64,10 @@ extension TaskCollectionViewCell: UITextViewDelegate {
         if textView.text.isEmpty || textView.text == "" {
             textView.textColor = .lightGray
             textView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
+        } else {
+            guard let text = textView.text else { return }
+            print(text)
+            TasksViewController.store(textViewText: text)
         }
     }
     
