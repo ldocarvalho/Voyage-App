@@ -53,15 +53,15 @@ class TasksViewController: UIViewController {
         self.addGreatMessage()
         
         // Layout adjustment
-//        let screenSize = UIScreen.main.bounds.size
-//        let cellWidth = floor(screenSize.width * cellScale)
-//        let cellHeight = floor(screenSize.height * cellScale)
-//        let insetX = (view.bounds.width - cellWidth) / 2.0
-//        //let insetY = (view.bounds.height - cellHeight) / 2.0
-//
-//        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-//        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: 0.0, right: 0.0)
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * cellScale)
+        //let cellHeight = floor(screenSize.height * cellScale)
+        let insetX = (view.bounds.width - cellWidth) / 2.0
+        //let insetY = (view.bounds.height - cellHeight) / 2.0
+
+        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        //layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX + 20, bottom: 0.0, right: 0.0)
                 
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
