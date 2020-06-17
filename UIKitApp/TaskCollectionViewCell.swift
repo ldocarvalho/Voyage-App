@@ -57,15 +57,15 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     @IBAction func doneButtonClicked(_ sender: Any) {
         tvc?.addGreatMessage()
-        self.taskTextView.isEditable = false
+        //self.taskTextView.isEditable = false
         self.doneButton.alpha = 0
         self.notDoneButton.alpha = 0
-        tvc.movimento()
+        tvc?.movimento()
     }
     
     @IBAction func notDoneButtonClicked(_ sender: Any) {
         tvc?.addBadMessage()
-        self.taskTextView.isEditable = false
+        //self.taskTextView.isEditable = false
         self.doneButton.alpha = 0
         self.notDoneButton.alpha = 0
     }

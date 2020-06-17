@@ -46,9 +46,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joI-Hs-dT0">
-                                <rect key="frame" x="184" y="545" width="46" height="30"/>
+                                <rect key="frame" x="171" y="545" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Prosseguir"/>
                                 <connections>
                                     <segue destination="yGe-3I-Pz8" kind="show" id="vXE-U6-Heh"/>
                                 </connections>
@@ -126,18 +126,18 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPe-rX-sXw">
-                                                            <rect key="frame" x="146" y="229" width="30" height="30"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPe-rX-sXw">
+                                                            <rect key="frame" x="141" y="233" width="30" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" title="OK"/>
+                                                            <state key="normal" image="checkmark.circle" catalog="system"/>
                                                             <connections>
                                                                 <action selector="doneButtonClicked:" destination="1JT-O8-MGQ" eventType="touchUpInside" id="pb1-Y7-GOt"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-tC-7dM">
-                                                            <rect key="frame" x="33" y="229" width="30" height="30"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-tC-7dM">
+                                                            <rect key="frame" x="25" y="233" width="33" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" title="!OK"/>
+                                                            <state key="normal" image="trash" catalog="system"/>
                                                             <connections>
                                                                 <action selector="notDoneButtonClicked:" destination="1JT-O8-MGQ" eventType="touchUpInside" id="FWR-Hg-Jtr"/>
                                                             </connections>
@@ -199,7 +199,9 @@
     </scenes>
     <resources>
         <image name="Image" width="398" height="42"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="ilustraMontanhas" width="376" height="813"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="Cor do bground">
             <color red="0.81599998474121094" green="0.90499997138977051" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
