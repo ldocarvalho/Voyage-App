@@ -9,12 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Janela1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKitApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ilustraMontanhas" translatesAutoresizingMaskIntoConstraints="NO" id="iOB-hd-3Ym">
@@ -64,6 +64,9 @@
                         <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Janela1" id="3V3-g9-uh9">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="a6s-TY-l8l"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="explanationLabel" destination="HB2-FL-JcB" id="HqQ-U0-PYP"/>
                         <outlet property="goalTextField" destination="ugF-xv-RBq" id="3Ev-kH-VFn"/>
@@ -83,11 +86,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD6-fY-tXC">
-                                <rect key="frame" x="335" y="44" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reiniciar"/>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insira aqui sua meta ou seu sonho" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PhP-7V-Krf">
                                 <rect key="frame" x="20" y="101" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -163,10 +161,6 @@
                                     <action selector="addNewCell:" destination="yGe-3I-Pz8" eventType="touchUpInside" id="xPP-v4-2Lw"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ilustraMontanhas" translatesAutoresizingMaskIntoConstraints="NO" id="VA6-IC-MOt">
-                                <rect key="frame" x="-53" y="-4" width="521" height="905"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frase de motivação" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-95-SVs">
                                 <rect key="frame" x="20" y="555" width="374" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -178,18 +172,25 @@
                                 <rect key="frame" x="0.0" y="771" width="414" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxZ-y7-km0">
+                                <rect key="frame" x="339" y="54" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reiniciar"/>
+                                <connections>
+                                    <action selector="button_Alerta:" destination="yGe-3I-Pz8" eventType="touchUpInside" id="3cw-yp-0t0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Cor do bground"/>
                         <viewLayoutGuide key="safeArea" id="lDK-d9-LWN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bz5-5E-JQx"/>
                     <connections>
                         <outlet property="collectionView" destination="cCV-pF-O8J" id="9Sy-mX-wiw"/>
                         <outlet property="mato" destination="18U-qg-4He" id="bDb-Pg-MVS"/>
                         <outlet property="motivationLabel" destination="OL6-95-SVs" id="ALB-Ij-BBY"/>
                         <outlet property="motivational" destination="OL6-95-SVs" id="BHF-aW-ee6"/>
-                        <outlet property="restartButton" destination="KD6-fY-tXC" id="x2y-0S-bZz"/>
                         <outlet property="textField" destination="PhP-7V-Krf" id="esK-jI-jm0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="janela1" id="Ua2-iA-5Jr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbg-TU-rzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

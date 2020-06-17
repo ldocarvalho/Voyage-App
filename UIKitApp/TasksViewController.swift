@@ -15,6 +15,21 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var motivationLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    @IBAction func button_Alerta(_ sender: Any) {
+        let alerta = UIAlertController(title: "Reiniciar viagem", message: "Você tem certeza que deseja reiniciar sua viagem colocando outra meta?", preferredStyle:.alert)
+        
+        let janela1 = UIAlertAction(title: "Confirmar", style: .default) { (UIAlertAction) in
+            self.performSegue(withIdentifier: "janela1", sender: nil)
+        }
+        
+        let voltar = UIAlertAction(title: "Voltar", style: .default, handler: nil)
+        alerta.addAction(janela1)
+        alerta.addAction(voltar)
+        self.present(alerta, animated: true, completion: nil)
+        
+        
+    }
+    
     static let defaults = UserDefaults.standard
     static let storageKey: String = "procrastination-app"
     
