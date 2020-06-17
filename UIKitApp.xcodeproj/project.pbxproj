@@ -10,6 +10,7 @@
 		5C9CA4F124991BF300C4BCB4 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CA4F024991BF300C4BCB4 /* PersistenceService.swift */; };
 		5C9CA4F42499356500C4BCB4 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CA4F22499356500C4BCB4 /* Tasks+CoreDataClass.swift */; };
 		5C9CA4F52499356500C4BCB4 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CA4F32499356500C4BCB4 /* Tasks+CoreDataProperties.swift */; };
+		711293EB2499E2870027D585 /* dark background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 711293E92499E2870027D585 /* dark background.pdf */; };
 		762A896A24990EA60032ACAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762A896924990EA60032ACAC /* AppDelegate.swift */; };
 		762A896C24990EA60032ACAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762A896B24990EA60032ACAC /* SceneDelegate.swift */; };
 		762A896E24990EA60032ACAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762A896D24990EA60032ACAC /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		5C9CA4F024991BF300C4BCB4 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		5C9CA4F22499356500C4BCB4 /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tasks+CoreDataClass.swift"; path = "UIKitApp/Tasks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5C9CA4F32499356500C4BCB4 /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tasks+CoreDataProperties.swift"; path = "UIKitApp/Tasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		711293EA2499E2870027D585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Base; path = "../../animacao teste/animacao teste/Base.lproj/dark background.pdf"; sourceTree = "<group>"; };
 		762A896624990EA60032ACAC /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		762A896924990EA60032ACAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		762A896B24990EA60032ACAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				762A896D24990EA60032ACAC /* ViewController.swift */,
 				762A896F24990EA60032ACAC /* Main.storyboard */,
 				762A897524990EA80032ACAC /* Assets.xcassets */,
+				711293E92499E2870027D585 /* dark background.pdf */,
 				762A897724990EA80032ACAC /* LaunchScreen.storyboard */,
 				762A897A24990EA80032ACAC /* Info.plist */,
 				762A897224990EA60032ACAC /* UIKitApp.xcdatamodeld */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				762A897924990EA80032ACAC /* LaunchScreen.storyboard in Resources */,
+				711293EB2499E2870027D585 /* dark background.pdf in Resources */,
 				762A897624990EA80032ACAC /* Assets.xcassets in Resources */,
 				762A897124990EA60032ACAC /* Main.storyboard in Resources */,
 			);
@@ -175,6 +179,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		711293E92499E2870027D585 /* dark background.pdf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				711293EA2499E2870027D585 /* Base */,
+			);
+			name = "dark background.pdf";
+			sourceTree = "<group>";
+		};
 		762A896F24990EA60032ACAC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
