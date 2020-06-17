@@ -22,9 +22,9 @@ class TasksViewController: UIViewController {
             self.performSegue(withIdentifier: "janela1", sender: nil)
         }
         
-        let voltar = UIAlertAction(title: "Voltar", style: .default, handler: nil)
-        alerta.addAction(janela1)
+        let voltar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
         alerta.addAction(voltar)
+        alerta.addAction(janela1)
         self.present(alerta, animated: true, completion: nil)
         
         
@@ -53,32 +53,20 @@ class TasksViewController: UIViewController {
         self.addGreatMessage()
         
         // Layout adjustment
-        let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * cellScale)
-        let cellHeight = floor(screenSize.height * cellScale)
-        let insetX = (view.bounds.width - cellWidth) / 2.0
-        //let insetY = (view.bounds.height - cellHeight) / 2.0
-        
-        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: 0.0, right: 0.0)
-        
- //       self.textField.text = text!
-        
+//        let screenSize = UIScreen.main.bounds.size
+//        let cellWidth = floor(screenSize.width * cellScale)
+//        let cellHeight = floor(screenSize.height * cellScale)
+//        let insetX = (view.bounds.width - cellWidth) / 2.0
+//        //let insetY = (view.bounds.height - cellHeight) / 2.0
+//
+//        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+//        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: 0.0, right: 0.0)
+                
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
     }
-    
-    // Adding the alert dialog to the button
-    @IBAction func restartGoal(_ sender: Any) {
-        let alert = UIAlertController(title: "Reiniciar viagem", message: "Você tem certeza que deseja reiniciar sua viagem com outra meta?", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Não", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true)
-    }
-    
     func addGreatMessage() {
         let numberOfItems = greatMessages.count - 1
         let randomIndex = Int.random(in: 0 ..< numberOfItems)

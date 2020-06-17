@@ -92,6 +92,14 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxZ-y7-km0">
+                                <rect key="frame" x="339" y="54" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reiniciar"/>
+                                <connections>
+                                    <action selector="button_Alerta:" destination="yGe-3I-Pz8" eventType="touchUpInside" id="3cw-yp-0t0"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cCV-pF-O8J">
                                 <rect key="frame" x="0.0" y="188" width="414" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,7 +107,6 @@
                                 <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="20" id="Co5-h1-ZaA">
                                     <size key="itemSize" width="200" height="300"/>
-                                    <size key="estimatedItemSize" width="200" height="300"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -155,38 +162,25 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-67-PTS">
-                                <rect key="frame" x="195" y="143" width="25" height="24"/>
+                                <rect key="frame" x="194" y="143" width="25" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="addNewCell:" destination="yGe-3I-Pz8" eventType="touchUpInside" id="xPP-v4-2Lw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frase de motivação" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL6-95-SVs">
-                                <rect key="frame" x="20" y="555" width="374" height="73"/>
+                                <rect key="frame" x="20" y="546" width="374" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="18U-qg-4He">
-                                <rect key="frame" x="0.0" y="771" width="414" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxZ-y7-km0">
-                                <rect key="frame" x="339" y="54" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reiniciar"/>
-                                <connections>
-                                    <action selector="button_Alerta:" destination="yGe-3I-Pz8" eventType="touchUpInside" id="3cw-yp-0t0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Cor do bground"/>
                         <viewLayoutGuide key="safeArea" id="lDK-d9-LWN"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="cCV-pF-O8J" id="9Sy-mX-wiw"/>
-                        <outlet property="mato" destination="18U-qg-4He" id="bDb-Pg-MVS"/>
                         <outlet property="motivationLabel" destination="OL6-95-SVs" id="ALB-Ij-BBY"/>
                         <outlet property="motivational" destination="OL6-95-SVs" id="BHF-aW-ee6"/>
                         <outlet property="textField" destination="PhP-7V-Krf" id="esK-jI-jm0"/>
@@ -199,7 +193,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="398" height="42"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="ilustraMontanhas" width="376" height="813"/>
         <image name="trash" catalog="system" width="121" height="128"/>
