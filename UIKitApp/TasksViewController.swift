@@ -13,6 +13,11 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var restartButton: UIButton!
     
+    
+    private let defaults = UserDefaults.standard
+    private let storageKey: String = "procrastination-app"
+
+    
     @IBOutlet weak var motivational: UILabel!
     // var tasks = Task.fetchTasks()
     var tasks: [Task] = [Task(title: "")]
@@ -64,6 +69,32 @@ class TasksViewController: UIViewController {
         let index = Int(round(proportionalOffset))
         let safeIndex = max(0, min(tasks.count - 1, index))
         return safeIndex
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.index()
+//    }
+    
+    public func index() {
+        if let tasks = defaults.array(forKey: storageKey) {
+            self.tasks = tasks as! [Task]
+            self.collectionView.reloadData()
+        }
+    }
+    
+    public func store(textViewText text: String?) {
+        if text != nil {
+            let task: Task = Task(title: text!)
+    
+            if var tasks = defaults.array(forKey: storageKey) {
+                tasks.append(task)
+                //self.tasks.append(task)
+                defaults.set([task], forKey: storageKey)
+            } else {
+                    defaults.set([task], forKey: storageKey)
+            }
+        }
     }
 }
 
