@@ -16,18 +16,18 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     var task: Task! {
         didSet {
-            backgroundColorView.backgroundColor = .blue
-            backgroundColorView.layer.cornerRadius = 10.0
-            backgroundColorView.layer.masksToBounds = true
+            self.setUI()
             
-            self.setTextView()
-            // self.updateUI()
         }
     }
     
     // Called to set the text view layout to when there's nothing written in the cards
-    func setTextView() {
-        taskTextView.backgroundColor = .blue
+    func setUI() {
+        backgroundColorView.backgroundColor = .white
+        backgroundColorView.layer.cornerRadius = 10.0
+        backgroundColorView.layer.masksToBounds = true
+        
+        taskTextView.backgroundColor = .white
         taskTextView.text = task.title
         taskTextView.textColor = .black
         
@@ -64,11 +64,14 @@ extension TaskCollectionViewCell: UITextViewDelegate {
         if textView.text.isEmpty || textView.text == "" {
             textView.textColor = .lightGray
             textView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
-        } else {
-            guard let text = textView.text else { return }
-            print(text)
-            TasksViewController.store(textViewText: text)
         }
+        let row = textView.tag
+        print(textView.text!)
+        print(row)
+        tvc?.addToArray(text: textView.text!, index: row)
+//            guard let text = textView.text else { return }
+//            print(text)
+//            TasksViewController.store(textViewText: text)
     }
     
     // Identify the text's end

@@ -175,7 +175,7 @@
     <resources>
         <image name="ilustraMontanhas" width="376" height="813"/>
         <namedColor name="Cor do bground">
-            <color red="0.81596106290000003" green="0.90544807910000003" blue="0.93334025139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.81599998474121094" green="0.90499997138977051" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
