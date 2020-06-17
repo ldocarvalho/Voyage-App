@@ -53,10 +53,10 @@
                                     <segue destination="yGe-3I-Pz8" kind="show" id="vXE-U6-Heh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira aqui sua meta ou seu sonho" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ugF-xv-RBq">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insira aqui sua meta ou seu sonho" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ugF-xv-RBq">
                                 <rect key="frame" x="67" y="466" width="284" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -91,7 +91,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insira aqui sua meta ou seu sonho" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PhP-7V-Krf">
                                 <rect key="frame" x="20" y="101" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cCV-pF-O8J">
@@ -166,6 +166,7 @@
                         <outlet property="motivationLabel" destination="OL6-95-SVs" id="ALB-Ij-BBY"/>
                         <outlet property="motivational" destination="OL6-95-SVs" id="BHF-aW-ee6"/>
                         <outlet property="restartButton" destination="KD6-fY-tXC" id="x2y-0S-bZz"/>
+                        <outlet property="textField" destination="PhP-7V-Krf" id="esK-jI-jm0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbg-TU-rzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
