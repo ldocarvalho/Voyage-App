@@ -22,7 +22,7 @@ class TasksViewController: UIViewController {
 
     
     @IBOutlet weak var motivational: UILabel!
-    // var tasks = Task.fetchTasks()
+    @IBOutlet weak var mato: UIImageView!
     
     var tasks: [Task] = [Task(title: "")]
     
@@ -48,7 +48,7 @@ class TasksViewController: UIViewController {
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: 0.0, right: 0.0)
         
-        self.textField.text = text!
+ //       self.textField.text = text!
         
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
@@ -102,6 +102,15 @@ class TasksViewController: UIViewController {
         let index = Int(round(proportionalOffset))
         let safeIndex = max(0, min(tasks.count - 1, index))
         return safeIndex
+    }
+    
+    func movimento() {
+        UIView.animate(withDuration: 4.0, delay: 1.2, options: .curveEaseOut, animations: {
+          var passo = self.mato.frame
+            passo.origin.x -= (passo.size.width - 100)
+
+          self.mato.frame = passo
+     })
     }
 //
 //
