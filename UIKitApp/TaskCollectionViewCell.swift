@@ -53,29 +53,27 @@ extension TaskCollectionViewCell: UITextViewDelegate {
     
     // Called when the text view starts to be edited
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if taskTextView.text == "Escreva aqui uma tarefa importante para chegar na sua meta." {
-            taskTextView.text = ""
+        if textView.text == "Escreva aqui uma tarefa importante para chegar na sua meta." {
+            textView.text = ""
         }
-        taskTextView.textColor = .black
+        textView.textColor = .black
     }
     
     // Called when the text view ends the editing
     func textViewDidEndEditing(_ textView: UITextView) {
-        if taskTextView.text.isEmpty || textView.text == "" {
-            taskTextView.textColor = .lightGray
-            taskTextView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
-        }
-        else {
-            if let task = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: PersistenceService.persistentContainer.viewContext) as? Tasks {
-                task.task = taskTextView.text
-                PersistenceService.saveContext()
-                tvc.reloadTasks()
-            }
+        if textView.text.isEmpty || textView.text == "" {
+            textView.textColor = .lightGray
+            textView.text = "Escreva aqui uma tarefa importante para chegar na sua meta."
         }
     }
     
-    // Constraint for the text size in the text view to be inferior or equal to 150 characters
+    // Identify the text's end
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        return taskTextView.text.count + (taskTextView.text.count - range.length) <= 150
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+        // return taskTextView.text.count + (taskTextView.text.count - range.length) <= 150
     }
 }

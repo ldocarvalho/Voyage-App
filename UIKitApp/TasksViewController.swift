@@ -57,17 +57,6 @@ class TasksViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    func reloadTasks() {
-        do {
-            if let listOfSavedTasks = try PersistenceService.persistentContainer.viewContext.fetch(Tasks.fetchRequest()) as? [Task] {
-                self.tasks = listOfSavedTasks
-            }
-        } catch {
-            print("Erro no banco, não conseguiu realizar a busca")
-        }
-        collectionView.reloadData()
-    }
-    
     private func indexOfMajorCell() -> Int {
         let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         let itemWidth = layout.itemSize.width
