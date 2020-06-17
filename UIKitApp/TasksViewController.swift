@@ -23,8 +23,9 @@ class TasksViewController: UIViewController {
     
     var tasks: [Task] = [Task(title: "")]
     
-    let frases: [String] = ["Comece a sua viagem, não é necessario que você veja toda a estrada, apenas dê o primeiro passo.", "Uma grande viagem começa com um pequeno passo.", "No final a jornada terá válido a pena", "Trace novas rotas.", "Não desista, os desvios fazem parte.", "Siga em frente, continue sendo forte.", "Seu sonho está um passo de você", "Você esta indo muito bem", "Não existe uma direção certa, você está indo muito bem", "Você faz seu proprio caminho", "Deixe seus sonhos guiarem você", "Os caminhos das nossas viagens nem sempre saem como esperado, mas continue firme", "Mantenha sempre seus sonhos em movimento", "A estrada tem alguns obstaculos, não deixe de acreditar em si", "Existem infinitas possibilidade de caminhos, mas o destino é um só", "Não fique parado, seu sonho esta logo ali", "se você fizer as coisas por completo, você será um vitorioso", "Você consegue!"]
-    
+    let frasesConsolo: [String] = ["Trace novas rotas.", "Não desista, os desvios fazem parte.", "Siga em frente, continue sendo forte.", "Os caminhos das nossas viagens nem sempre saem como esperado, mas continue firme.", "A estrada tem alguns obstaculos, não deixe de acreditar em si.", "Existem infinitas possibilidade de caminhos, mas o destino é um só.", "Você consegue!", "Se você fizer as coisas por completo, você será um vitorioso."]
+    let frasesParabens: [String] = ["Uma grande viagem começa com um pequeno passo.", "Seu sonho está um passo de você.", "Você está indo muito bem.", "Não existe uma direção certa, você está indo muito bem.", "Você faz seu proprio caminho.", "Deixe seus sonhos guiarem você. Continue!", "Mantenha sempre seus sonhos em movimento.", "Não fique parado, seu sonho esta logo ali."]
+
     
     let cellScale: CGFloat = 0.6
     
