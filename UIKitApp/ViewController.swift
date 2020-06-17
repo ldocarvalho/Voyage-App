@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tasksViewController = segue.destination as? TasksViewController {
+            tasksViewController.text = goalTextField.text!
+        }
+    }
 }
 
