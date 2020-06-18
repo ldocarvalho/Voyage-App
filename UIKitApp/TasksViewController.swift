@@ -14,6 +14,7 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var motivationLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var arvores: UIImageView!
     
     @IBAction func button_Alerta(_ sender: Any) {
         let alerta = UIAlertController(title: "Reiniciar viagem", message: "Você tem certeza que deseja reiniciar sua viagem colocando outra meta?", preferredStyle:.alert)
@@ -38,6 +39,7 @@ class TasksViewController: UIViewController {
     
     @IBOutlet weak var motivational: UILabel!
     @IBOutlet weak var mato: UIImageView!
+    @IBOutlet weak var carro: UIImageView!
     
     var tasks: [Task] = [Task(title: "")]
     
@@ -107,36 +109,28 @@ class TasksViewController: UIViewController {
         return safeIndex
     }
     
-    func movimento() {
+    func movimentoFrente() {
         UIView.animate(withDuration: 4.0, delay: 1.2, options: .curveEaseOut, animations: {
-          var passo = self.mato.frame
-            passo.origin.x -= (passo.size.width - 100)
-
-          self.mato.frame = passo
+            var passo1 = self.mato.frame
+            passo1.origin.x -= (passo1.size.width - 100)
+            var passo2 = self.arvores.frame
+            passo2.origin.x -= (passo2.size.width)
+            
+            self.mato.frame = passo1
+            self.arvores.frame = passo2
      })
     }
-//
-//
-//    public func index() {
-//        if let tasks = TasksViewController.defaults.array(forKey: TasksViewController.storageKey) {
-//            self.tasks = tasks as! [Task]
-//            self.collectionView.reloadData()
-//        }
-//    }
-//
-//    static func store(textViewText text: String?) {
-//        print("Naruto")
-//        if text != nil {
-//            let task: Task = Task(title: text!)
-//            guard var tasks = defaults.array(forKey: storageKey) else {
-//                defaults.set([task.title], forKey: storageKey)
-//                return
-//            }
-//            tasks.append(task.title)
-//            //self.tasks.append(task)
-//            defaults.set(tasks, forKey: storageKey)
-//        }
-//    }
+    func movimentoTraz() {
+        UIView.animate(withDuration: 4.0, delay: 1.2, options: .curveEaseOut, animations: {
+            var passo1 = self.mato.frame
+            passo1.origin.x += (passo1.size.width - 100)
+            var passo2 = self.arvores.frame
+            passo2.origin.x += (passo2.size.width)
+            
+            self.mato.frame = passo1
+            self.arvores.frame = passo2
+     })
+    }
 }
 
 

@@ -12,15 +12,11 @@
         <!--Janela1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="UIKitApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ilustraMontanhas" translatesAutoresizingMaskIntoConstraints="NO" id="iOB-hd-3Ym">
-                                <rect key="frame" x="-1" y="8" width="416" height="900"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB2-FL-JcB">
                                 <rect key="frame" x="20" y="165" width="374" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,6 +55,10 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ilustraMontanhas" translatesAutoresizingMaskIntoConstraints="NO" id="iOB-hd-3Ym">
+                                <rect key="frame" x="0.0" y="-4" width="414" height="908"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Cor do bground"/>
                         <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,12 +179,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arvores" translatesAutoresizingMaskIntoConstraints="NO" id="d4y-Tv-cn1">
+                                <rect key="frame" x="998" y="565" width="508" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mato" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-aW-hBg">
+                                <rect key="frame" x="-1" y="770" width="414" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="carro" translatesAutoresizingMaskIntoConstraints="NO" id="hYw-68-IK5">
+                                <rect key="frame" x="32" y="669" width="335" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="Cor do bground"/>
                         <viewLayoutGuide key="safeArea" id="lDK-d9-LWN"/>
                     </view>
                     <connections>
+                        <outlet property="arvores" destination="d4y-Tv-cn1" id="3Ge-sl-JcL"/>
+                        <outlet property="carro" destination="hYw-68-IK5" id="vAZ-9f-b0e"/>
                         <outlet property="collectionView" destination="cCV-pF-O8J" id="9Sy-mX-wiw"/>
+                        <outlet property="mato" destination="YYH-aW-hBg" id="lwO-I4-jrm"/>
                         <outlet property="motivationLabel" destination="OL6-95-SVs" id="ALB-Ij-BBY"/>
                         <outlet property="motivational" destination="OL6-95-SVs" id="BHF-aW-ee6"/>
                         <outlet property="textField" destination="PhP-7V-Krf" id="esK-jI-jm0"/>
@@ -197,8 +212,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arvores" width="337" height="224"/>
+        <image name="carro" width="277" height="183"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="ilustraMontanhas" width="376" height="813"/>
+        <image name="mato" width="398" height="42"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="Cor do bground">
             <color red="0.81599998474121094" green="0.90499997138977051" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
