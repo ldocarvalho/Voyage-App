@@ -9,6 +9,12 @@
 import UIKit
 import Foundation
 
+struct UserDefaultManager {
+    static let userDefault: UserDefaults = UserDefaults()
+    static let userDefaultKey: String = "procrastination-app"
+    static let userDefaultTitleKey: String = "procrastination-title"
+}
+
 class TasksViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var restartButton: UIButton!
@@ -20,6 +26,14 @@ class TasksViewController: UIViewController {
         let alerta = UIAlertController(title: "Reiniciar viagem", message: "Você tem certeza que deseja reiniciar sua viagem colocando outra meta?", preferredStyle:.alert)
         
         let janela1 = UIAlertAction(title: "Confirmar", style: .default) { (UIAlertAction) in
+            if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultKey) as? [String] {
+                print(stringObject)
+                UserDefaultManager.userDefault.set(nil, forKey: UserDefaultManager.userDefaultKey)
+            }
+            if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultTitleKey) as? String {
+                print(stringObject)
+                UserDefaultManager.userDefault.set(nil, forKey: UserDefaultManager.userDefaultTitleKey)
+            }
             self.performSegue(withIdentifier: "janela1", sender: nil)
         }
         
@@ -30,9 +44,6 @@ class TasksViewController: UIViewController {
         
         
     }
-    
-    static let defaults = UserDefaults.standard
-    static let storageKey: String = "procrastination-app"
     
     var text: String? = nil
 
@@ -52,7 +63,12 @@ class TasksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultKey) as? [String] {
+            print(stringObject)
+            for stringValue in stringObject {
+                tasks.append(Task(title: stringValue))
+            }
+        }
         self.addGreatMessage()
         
         // Layout adjustment
@@ -66,7 +82,11 @@ class TasksViewController: UIViewController {
         //layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX + 20, bottom: 0.0, right: 0.0)
         
-        self.textField.text = text!
+        if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultTitleKey) as? String {
+            print(stringObject)
+            self.textField.text = stringObject
+        }
+        
                 
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
@@ -88,7 +108,6 @@ class TasksViewController: UIViewController {
     @IBAction func addNewCell(_ sender: Any) {
         let emptyTask = Task(title: "")
         tasks.append(emptyTask)
-        
         let indexPath = IndexPath(row: self.tasks.count - 1, section: 0)
         self.collectionView.insertItems(at: [indexPath])
         self.collectionView.reloadData()
@@ -100,6 +119,16 @@ class TasksViewController: UIViewController {
             tasks[index] = newTask
         } else {
             tasks[index].title = text
+        }
+        var stringArray = [String]()
+        for task in tasks {
+            stringArray.append(task.title)
+        }
+        if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultKey) as? [String] {
+          print(stringObject)
+          UserDefaultManager.userDefault.setValue(stringArray, forKey: UserDefaultManager.userDefaultKey)
+        } else {
+          UserDefaultManager.userDefault.setValue(stringArray, forKey: UserDefaultManager.userDefaultKey)
         }
     }
     
@@ -150,7 +179,12 @@ extension TasksViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tasks.count
+        if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultKey) as? [String] {
+          return stringObject.count + 1
+        } else {
+          return tasks.count
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

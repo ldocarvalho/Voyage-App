@@ -16,8 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var buttonView: UIView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
         buttonView.layer.cornerRadius = 10.0
@@ -25,9 +27,21 @@ class ViewController: UIViewController {
         //buttonView.layer.backgroundColor?.alpha = 0.5
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultKey) as? [String] {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tvc  = storyboard.instantiateViewController(withIdentifier: "Taskvc")
+            present(tvc, animated: false, completion: nil)
+            print(stringObject)
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tasksViewController = segue.destination as? TasksViewController {
             tasksViewController.text = goalTextField.text!
+            UserDefaultManager.userDefault.setValue(goalTextField.text, forKey: UserDefaultManager.userDefaultTitleKey)
         }
     }
 }
