@@ -40,6 +40,7 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var motivational: UILabel!
     @IBOutlet weak var mato: UIImageView!
     @IBOutlet weak var carro: UIImageView!
+    @IBOutlet weak var cidade: UIImageView!
     
     var tasks: [Task] = [Task(title: "")]
     
@@ -115,9 +116,13 @@ class TasksViewController: UIViewController {
             passo1.origin.x -= (passo1.size.width - 100)
             var passo2 = self.arvores.frame
             passo2.origin.x -= (passo2.size.width)
+            var passo3 = self.cidade.frame
+            passo3.origin.x -= (passo3.size.width)
+            
             
             self.mato.frame = passo1
             self.arvores.frame = passo2
+            self.cidade.frame = passo3
      })
     }
     func movimentoTraz() {
@@ -126,9 +131,12 @@ class TasksViewController: UIViewController {
             passo1.origin.x += (passo1.size.width - 100)
             var passo2 = self.arvores.frame
             passo2.origin.x += (passo2.size.width)
+            var passo3 = self.cidade.frame
+            passo3.origin.x += (passo3.size.width)
             
             self.mato.frame = passo1
             self.arvores.frame = passo2
+            self.cidade.frame = passo3
      })
     }
 }
