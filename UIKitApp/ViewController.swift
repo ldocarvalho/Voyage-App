@@ -14,10 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var invitationLabel: UILabel!
     @IBOutlet weak var goalTextField: UITextField!
+    @IBOutlet weak var buttonView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        buttonView.layer.cornerRadius = 10.0
+        buttonView.layer.masksToBounds = true
+        //buttonView.layer.backgroundColor?.alpha = 0.5
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
