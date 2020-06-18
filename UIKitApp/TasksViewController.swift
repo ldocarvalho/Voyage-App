@@ -80,7 +80,7 @@ class TasksViewController: UIViewController {
 
         let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         //layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX + 20, bottom: 0.0, right: 0.0)
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX, bottom: 0.0, right: insetX - 40)
         
         if let stringObject = UserDefaultManager.userDefault.object(forKey: UserDefaultManager.userDefaultTitleKey) as? String {
             print(stringObject)

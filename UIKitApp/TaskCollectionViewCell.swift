@@ -44,8 +44,8 @@ class TaskCollectionViewCell: UICollectionViewCell {
         taskTextView.isScrollEnabled = false
         taskTextView.textContainerInset = UIEdgeInsets(top: (taskTextView.frame.height)/4.0, left: 0, bottom: 0, right: 0)
         
-        self.doneButton.alpha = 0
-        self.notDoneButton.alpha = 0
+//        self.doneButton.alpha = 0
+//        self.notDoneButton.alpha = 0
 
         self.taskTextView.delegate = self
     }
@@ -58,16 +58,16 @@ class TaskCollectionViewCell: UICollectionViewCell {
     @IBAction func doneButtonClicked(_ sender: Any) {
         tvc?.addGreatMessage()
         //self.taskTextView.isEditable = false
-        self.doneButton.alpha = 0
-        self.notDoneButton.alpha = 0
+//        self.doneButton.alpha = 0
+//        self.notDoneButton.alpha = 0
         tvc?.movimentoFrente()
     }
     
     @IBAction func notDoneButtonClicked(_ sender: Any) {
         tvc?.addBadMessage()
         //self.taskTextView.isEditable = false
-        self.doneButton.alpha = 0
-        self.notDoneButton.alpha = 0
+//        self.doneButton.alpha = 0
+//        self.notDoneButton.alpha = 0
         tvc?.movimentoTraz()
     }
     
