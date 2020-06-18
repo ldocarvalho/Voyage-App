@@ -65,6 +65,8 @@ class TasksViewController: UIViewController {
         let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         //layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.sectionInset = UIEdgeInsets(top: 0.0, left: insetX + 20, bottom: 0.0, right: 0.0)
+        
+        self.textField.text = text!
                 
         // Selecting the ViewController class to be the data source for the collection view
         collectionView.dataSource = self
@@ -118,7 +120,6 @@ class TasksViewController: UIViewController {
             passo2.origin.x -= (passo2.size.width)
             var passo3 = self.cidade.frame
             passo3.origin.x -= (passo3.size.width)
-            
             
             self.mato.frame = passo1
             self.arvores.frame = passo2
