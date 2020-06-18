@@ -116,11 +116,12 @@ extension TaskCollectionViewCell: UITextViewDelegate {
     
     // Identify the text's end
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let condition = textView.text.count + (textView.text.count - range.length) <= 100
         if text == "\n" {
             textView.resignFirstResponder()
-            return false
+            return false && condition
         }
-        return true
+        return true && condition
         // return taskTextView.text.count + (taskTextView.text.count - range.length) <= 150
     }
 }
