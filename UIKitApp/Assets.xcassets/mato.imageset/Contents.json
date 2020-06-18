@@ -3,6 +3,16 @@
     {
       "filename" : "Group 47.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "matodark.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

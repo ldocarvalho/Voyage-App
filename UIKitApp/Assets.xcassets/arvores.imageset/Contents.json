@@ -3,6 +3,16 @@
     {
       "filename" : "arvores.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "arvoredark.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

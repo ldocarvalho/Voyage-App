@@ -3,6 +3,16 @@
     {
       "filename" : "CAR.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "CARdark.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
